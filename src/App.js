@@ -32,8 +32,8 @@ function App() {
             <button onClick={()=>dispatch(addTodo(prompt()))}>  Add todo</button>
             <button onClick={()=>dispatch(addAsyncTodo())}>  Add async todo</button>
             <ul>
-                {todos.map(t=>
-                    <li key={t}>{t}</li>
+                {todos.map(todo=>
+                    <li key={todo}>{todo}</li>
                 )}
             </ul>
         </div>
