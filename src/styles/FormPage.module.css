@@ -1,33 +1,30 @@
-.main_form{
+.form{
     display: flex;
     justify-content: center;
     color: white;
-    margin: 180px ;
-    /*border: 1px solid rgb(255, 153, 0);*/
+    margin: 150px ;
+    /*border:1px solid white ;*/
 }
-.main_box{
+.main_container{
     display: flex;
-    margin: 20px 10px 22px 5px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 400px;
-    width: 400px;
+    width: 640px;
+    border:1px solid rgba(255, 255, 255, 0.56);
     background: rgba(139, 114, 166, 0.75);
     border-radius: 5px;
-    left: 100rem;
-    top: 100rem;
-    border:1px solid rgba(255, 255, 255, 0.56);
     -webkit-box-shadow: -15px 11px 14px -3px rgba(137, 87, 155, 0.6);
     -moz-box-shadow: -15px 11px 14px -3px rgba(137, 87, 155, 0.6);
     box-shadow: -15px 11px 14px -3px rgba(137, 87, 155, 0.6);
 }
-.title{
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.input_form{
+    width: 550px;
+    margin: 0 20px 5px 20px;
+    /*border:1px solid #ffcc00;*/
 }
-.information{
-    margin: 2rem;
+.input_form input {
+    width: 540px;
 }
 .btn {
     font-size: 14px;
