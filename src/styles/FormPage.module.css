@@ -24,7 +24,9 @@
     /*border:1px solid #ffcc00;*/
 }
 .input_form input {
+    height: 1.5rem;
     width: 540px;
+    border-radius: 5px;
 }
 .btn {
     font-size: 14px;
