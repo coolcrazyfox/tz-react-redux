@@ -26,6 +26,11 @@
     font-size: 2rem;
     margin-bottom: 1rem;
 }
+.box_info{
+    border:1px solid rgba(255, 255, 255, 0.56);
+    height: 400px;
+    width: 350px;
+}
 .information{
     margin: 2rem;
 }
