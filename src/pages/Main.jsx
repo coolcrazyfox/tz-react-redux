@@ -19,6 +19,23 @@ import FormPage from "./FormPage";
 const Main = () => {
     // const posts = useSelector(state => state.posts)
     const posts = useSelector(selectAllPosts)
+
+    const changeButton= ()=>{
+        if (posts.length==1){
+            return(
+                <Link to='/form'>
+                    <button className={s.btn}>Добавить</button>
+                 </Link>
+            )}
+        // else{
+        //     return(
+        //         <div>
+        //             <button className={s.btn}>Изменить</button>
+        //         </div>
+        //
+        //     )
+        // }
+    }
     const renderedPosts = posts.map(post=>(
         <div key={post.id}>
             <h3>{post.name}</h3>
@@ -58,9 +75,10 @@ const Main = () => {
                 {/*</div>*/}
 
                 {/*<div className={s.information}> No data</div>*/}
-                <Link to='/form'>
-                    <button className={s.btn}>Добавить</button>
-                </Link>
+                {/*<Link to='/form'>*/}
+                {/*    <button className={s.btn}>Добавить</button>*/}
+                {/*</Link>*/}
+                {changeButton}
 
             </div>
             {/*<FormPage/>*/}
