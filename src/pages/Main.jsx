@@ -19,23 +19,9 @@ import FormPage from "./FormPage";
 const Main = () => {
     // const posts = useSelector(state => state.posts)
     const posts = useSelector(selectAllPosts)
+    const addButton = posts.length
+    // console.log(addButton)
 
-    const changeButton= ()=>{
-        if (posts.length==1){
-            return(
-                <Link to='/form'>
-                    <button className={s.btn}>Добавить</button>
-                 </Link>
-            )}
-        // else{
-        //     return(
-        //         <div>
-        //             <button className={s.btn}>Изменить</button>
-        //         </div>
-        //
-        //     )
-        // }
-    }
     const renderedPosts = posts.map(post=>(
         <div key={post.id}>
             <h3>{post.name}</h3>
@@ -71,14 +57,15 @@ const Main = () => {
             <div className={s.main_box}>
                 <div className={s.title}>Карточка студента</div>
                 {/*<div className={s.box_info}>*/}
-                    {renderedPosts}
+                    {addButton<=1 ?  <div className={s.information}> No data</div> : renderedPosts}
                 {/*</div>*/}
 
-                {/*<div className={s.information}> No data</div>*/}
-                {/*<Link to='/form'>*/}
-                {/*    <button className={s.btn}>Добавить</button>*/}
-                {/*</Link>*/}
-                {changeButton}
+                {addButton>1 ? <div to='/form'> <button className={s.btn}>Изменить</button></div>: <Link to='/form'>
+                    <button className={s.btn}>Добавить</button>
+                </Link>
+                }
+
+
 
             </div>
             {/*<FormPage/>*/}
