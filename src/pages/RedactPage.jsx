@@ -1,22 +1,21 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import s from '../styles/FormPage.module.css'
+import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {postAdded} from "../testRedux/features/post/postsSlice";
-import {Link} from "react-router-dom";
 import {nanoid} from "@reduxjs/toolkit";
 
-
-const FormPage = () => {
+const RedactPage = () => {
     const dispatch = useDispatch()
     const [name, setName] = useState('')
     const [surname, setSurName] = useState('')
     const [birth_year, setBirthYear] = useState('')
     const [portfolio, setPortfolio] = useState('')
+
     const onNameChanged = e => setName(e.target.value)
     const onSurNameChanged = e => setSurName(e.target.value)
     const onBirthYearChanged = e => setBirthYear(e.target.value)
     const onPortfolioChanged = e => setPortfolio(e.target.value)
-
     const onSavePostClicked = () => {
         if (name && surname && birth_year && portfolio) {
             dispatch(
@@ -34,35 +33,36 @@ const FormPage = () => {
             setPortfolio('')
         }
     }
-    // useEffect(()=>{
-    //     let nameAsString = localStorage.getItem('name')
-    //     let surnameAsString = localStorage.getItem('surname')
-    //     let birth_yearAsString = localStorage.getItem('birth_year')
-    //     let portfolioAsString = localStorage.getItem('portfolio')
-    //     if(nameAsString && surnameAsString && birth_yearAsString  && portfolioAsString){
-    //         let newName = JSON.parse(nameAsString)
-    //         let newSurName = JSON.parse(surnameAsString)
-    //         let newBirthYear = JSON.parse(birth_yearAsString)
-    //         let newPortfolio = JSON.parse(portfolioAsString)
-    //         setName(newName)
-    //         setSurName(newSurName)
-    //         setBirthYear(newBirthYear)
-    //         setPortfolio(newPortfolio)
-    //     }
-    //
-    // },[])
-    // useEffect(()=>{
-    //     localStorage.setItem('name', JSON.stringify(name))
-    // }, [name])
-    // useEffect(()=>{
-    //     localStorage.setItem('surname', JSON.stringify(surname))
-    // }, [ surname])
-    // useEffect(()=>{
-    //     localStorage.setItem('birth_year', JSON.stringify(birth_year))
-    // }, [ birth_year])
-    // useEffect(()=>{
-    //     localStorage.setItem('portfolio', JSON.stringify(portfolio))
-    // }, [ portfolio])
+
+    useEffect(()=>{
+        let nameAsString = localStorage.getItem('name')
+        let surnameAsString = localStorage.getItem('surname')
+        let birth_yearAsString = localStorage.getItem('birth_year')
+        let portfolioAsString = localStorage.getItem('portfolio')
+        if(nameAsString && surnameAsString && birth_yearAsString  && portfolioAsString){
+            let newName = JSON.parse(nameAsString)
+            let newSurName = JSON.parse(surnameAsString)
+            let newBirthYear = JSON.parse(birth_yearAsString)
+            let newPortfolio = JSON.parse(portfolioAsString)
+            setName(newName)
+            setSurName(newSurName)
+            setBirthYear(newBirthYear)
+            setPortfolio(newPortfolio)
+        }
+
+    },[])
+    useEffect(()=>{
+        localStorage.setItem('name', JSON.stringify(name))
+    }, [name])
+    useEffect(()=>{
+        localStorage.setItem('surname', JSON.stringify(surname))
+    }, [ surname])
+    useEffect(()=>{
+        localStorage.setItem('birth_year', JSON.stringify(birth_year))
+    }, [ birth_year])
+    useEffect(()=>{
+        localStorage.setItem('portfolio', JSON.stringify(portfolio))
+    }, [ portfolio])
     return (
         <Fragment>
             <section className={s.form}>
@@ -92,18 +92,22 @@ const FormPage = () => {
                         </p>
 
                     </div>
+                    {/*<Link to='/card'>*/}
+                    {/*    <button className={s.btn} type={'button'} onClick={onSavePostClicked}>Создать</button>*/}
+                    {/*</Link>*/}
                     <Link to='/card'>
-                        <button className={s.btn} type={'button'} onClick={onSavePostClicked}>Создать</button>
+                        <button className={s.btn} type={'button'} >Back</button>
+                    </Link>
+                    <Link to='/card'>
+                        <button className={s.btn} type={'button'} onClick={onSavePostClicked} >Изменить</button>
                     </Link>
                 </form>
 
-
             </section>
 
-
-
         </Fragment>
+
     );
 };
 
-export default FormPage;
+export default RedactPage;

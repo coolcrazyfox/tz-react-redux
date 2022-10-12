@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import s from "../styles/Main.module.css";
 import {addTodo, decrement, increment, removeLastTodo} from "../toolkitRedux/toolkitSlice";
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import {selectAllPosts} from "../testRedux/features/post/postsSlice";
 import FormPage from "./FormPage";
+import Card from "./Card";
 
 
 // const addAsyncTodo =()=>{
@@ -18,19 +19,33 @@ import FormPage from "./FormPage";
 
 const Main = () => {
     // const posts = useSelector(state => state.posts)
-    const posts = useSelector(selectAllPosts)
-    const addButton = posts.length
+    // const posts = useSelector(selectAllPosts)
+    // console.log('p',posts)
+    // const addButton = posts.length
+    // const isMounted = useRef(false)
+
+    // useEffect(()=>{
+    //     if (isMounted.current){
+    //         const json =JSON.stringify(posts)
+    //         localStorage.setItem('contact', json)
+    //     }
+    //     isMounted.current = true
+    // },[posts])
+    // useEffect(()=>{
+    //     console.log('render')
+    // },[])
     // console.log(addButton)
 
-    const renderedPosts = posts.map(post=>(
-        <div key={post.id}>
-            <h3>{post.name}</h3>
-            <h3>{post.surname}</h3>
-            <h3>{post.birth_year}</h3>
-            <h3>{post.portfolio}</h3>
-
-        </div>
-    ))
+    // const renderedPosts = posts.map(post=>(
+    //
+    //     <div key={post.id}>
+    //         <p>{post.name}</p>
+    //         <p>{post.surname}</p>
+    //         <p>{post.birth_year}</p>
+    //         <p>{post.portfolio}</p>
+    //
+    //     </div>
+    // ))
 
     // const count = useSelector(state => state.toolkit.count)
     // const todos = useSelector(state => state.toolkit.todos)
@@ -57,13 +72,19 @@ const Main = () => {
             <div className={s.main_box}>
                 <div className={s.title}>Карточка студента</div>
                 {/*<div className={s.box_info}>*/}
-                    {addButton<=1 ?  <div className={s.information}> No data</div> : renderedPosts}
+                {/*    <Card/>*/}
                 {/*</div>*/}
+                <div className={s.information}> No data</div>
 
-                {addButton>1 ? <div to='/form'> <button className={s.btn}>Изменить</button></div>: <Link to='/form'>
+
+                <Link to='/form'>
                     <button className={s.btn}>Добавить</button>
                 </Link>
-                }
+                {/*    {addButton<=1 ?  <div className={s.information}> No data</div> : renderedPosts}*/}
+                {/*</div>*/}
+
+                {/*{addButton>1 ? <div to='/form'> <button className={s.btn}>Изменить</button></div>: */}
+                {/*}*/}
 
 
 
