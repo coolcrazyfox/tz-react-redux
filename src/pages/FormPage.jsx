@@ -8,6 +8,7 @@ import {nanoid} from "@reduxjs/toolkit";
 
 const FormPage = () => {
     const dispatch = useDispatch()
+    const [posts, setPosts] = useState([])
     const [name, setName] = useState('')
     const [surname, setSurName] = useState('')
     const [birth_year, setBirthYear] = useState('')
@@ -18,7 +19,7 @@ const FormPage = () => {
     const onPortfolioChanged = e => setPortfolio(e.target.value)
 
     const onSavePostClicked = () => {
-        if (name && surname && birth_year && portfolio) {
+        if (name.trim().length && surname.trim().length && birth_year.trim().length && portfolio.trim().length) {
             dispatch(
                 postAdded({
                     id:nanoid(),

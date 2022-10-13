@@ -3,14 +3,14 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = [
     {
-        name: "",
-        surname: "",
-        birth_year: "",
-        portfolio: "",
+        name: [],
+        surname: [],
+        birth_year: [],
+        portfolio: [],
     }
 ]
 const postsSlice = createSlice({
-    name: 'post',
+    name: 'posts',
     initialState,
     reducers: {
         postAdded(state, action) {
