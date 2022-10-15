@@ -1,12 +1,14 @@
 import './App.css';
 import {RoutesRoot} from "./routes/RoutesRoot";
+import User from "./secondRedux/components/User";
 
 
 function App() {
     return (
-        <>
-            <RoutesRoot/>
-        </>
+        <div>
+            <User/>
+            {/*<RoutesRoot/>*/}
+        </div>
     );
 }
 
