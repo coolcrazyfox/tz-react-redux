@@ -19,15 +19,29 @@
     box-shadow: -15px 11px 14px -3px rgba(137, 87, 155, 0.6);
 }
 .input_form{
-    width: 550px;
+    width: 520px;
     margin: 0 20px 5px 20px;
     /*border:1px solid #ffcc00;*/
 }
 .input_form input {
     height: 1.5rem;
-    width: 540px;
+    width: 490px;
     border-radius: 5px;
+    margin-right: 5px;
 }
+.span_error {
+    color: darkred;
+}
+
+.box_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 200px;
+    /*border: 1px solid red;*/
+}
+
 .btn {
     font-size: 14px;
     background-color: rgb(6, 79, 131);

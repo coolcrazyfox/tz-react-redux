@@ -4,9 +4,12 @@ import {useSelector} from "react-redux";
 const Name = () => {
     const firstName=useSelector(state=>state.user.first_name)
     return (
-        <div>
-            First name:
-            {firstName}
+        <div style={{display:"flex", flexDirection:"row" , margin:"2px"}}>
+            <div>
+                <label htmlFor="">First name:</label>
+                <span style={{marginLeft:'10px'}}>{firstName}</span>
+            </div>
+
         </div>
     );
 };

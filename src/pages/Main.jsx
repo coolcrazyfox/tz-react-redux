@@ -4,7 +4,7 @@ import {addTodo, decrement, increment, removeLastTodo} from "../toolkitRedux/too
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import {selectAllPosts} from "../testRedux/features/post/postsSlice";
-import FormPage from "./FormPage";
+import FormPage from "../secondRedux/pages/UserPage";
 import Card from "./Card";
 
 // https://youtu.be/C0fBnil_Im4
