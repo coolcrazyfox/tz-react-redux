@@ -7,7 +7,7 @@ import {Provider} from "react-redux";
 // import {store} from "../src/testRedux/store/store";
 import  store,{persistor} from "../src/secondRedux/store/store";
 
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, HashRouter} from "react-router-dom";
 import {PersistGate} from "redux-persist/integration/react";
 import Loading from "./secondRedux/components/Loading";
 // import {store} from "./firstReduxToolkit/store/store";
@@ -15,13 +15,13 @@ import Loading from "./secondRedux/components/Loading";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter>
+    <HashRouter>
         <Provider store={store}>
             <PersistGate loading={<Loading/>} persistor={persistor}>
                 <App/>
             </PersistGate>
         </Provider>
-    </BrowserRouter>
+    </HashRouter>
 );
 
 

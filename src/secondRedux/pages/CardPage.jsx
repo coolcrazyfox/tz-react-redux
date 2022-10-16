@@ -16,15 +16,6 @@ const CardPage = () => {
                         <button className={s.btn}>Редактировать</button>
                     </Link>
                 </div>
-
-                {/*    {addButton<=1 ?  <div className={s.information}> No data</div> : renderedPosts}*/}
-                {/*</div>*/}
-
-                {/*{addButton>1 ? <div to='/form'> <button className={s.btn}>Изменить</button></div>: */}
-                {/*}*/}
-
-
-
             </div>
 
         </div>
