@@ -12,7 +12,6 @@ const Main = () => {
                 <div className={s.box_container}>
                     <Link to='/user'>
                             <button className={s.btn}>Добавить</button>
-
                     </Link>
                 </div>
             </div>
