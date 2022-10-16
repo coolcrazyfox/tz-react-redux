@@ -5,9 +5,11 @@ import App from './App';
 import {Provider} from "react-redux";
 // import {store} from "./toolkitRedux";
 // import {store} from "../src/testRedux/store/store";
-import {store} from "../src/secondRedux/store/store";
+import  store,{persistor} from "../src/secondRedux/store/store";
 
 import {BrowserRouter} from "react-router-dom";
+import {PersistGate} from "redux-persist/integration/react";
+import Loading from "./secondRedux/components/Loading";
 // import {store} from "./firstReduxToolkit/store/store";
 
 
@@ -15,9 +17,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
         <Provider store={store}>
-            <App/>
+            <PersistGate loading={<Loading/>} persistor={persistor}>
+                <App/>
+            </PersistGate>
         </Provider>
-     </BrowserRouter>
+    </BrowserRouter>
 );
 
 

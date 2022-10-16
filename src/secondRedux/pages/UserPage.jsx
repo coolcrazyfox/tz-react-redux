@@ -25,35 +25,7 @@ const UserPage = () => {
         mode:"onBlur"
     })
 
-    // useEffect(()=>{
-    //     let nameAsString = localStorage.getItem('name')
-    //     let surnameAsString = localStorage.getItem('surname')
-    //     let birth_yearAsString = localStorage.getItem('birth_year')
-    //     let portfolioAsString = localStorage.getItem('portfolio')
-    //     if(nameAsString && surnameAsString && birth_yearAsString  && portfolioAsString){
-    //         let newName = JSON.parse(nameAsString)
-    //         let newSurName = JSON.parse(surnameAsString)
-    //         let newBirthYear = JSON.parse(birth_yearAsString)
-    //         let newPortfolio = JSON.parse(portfolioAsString)
-    //         setName(newName)
-    //         setSurName(newSurName)
-    //         setBirthYear(newBirthYear)
-    //         setPortfolio(newPortfolio)
-    //     }
-    //
-    // },[])
-    // useEffect(()=>{
-    //     localStorage.setItem('name', JSON.stringify(name))
-    // }, [name])
-    // useEffect(()=>{
-    //     localStorage.setItem('surname', JSON.stringify(surname))
-    // }, [ surname])
-    // useEffect(()=>{
-    //     localStorage.setItem('birth_year', JSON.stringify(birth_year))
-    // }, [ birth_year])
-    // useEffect(()=>{
-    //     localStorage.setItem('portfolio', JSON.stringify(portfolio))
-    // }, [ portfolio])
+
     //init state
     const [name, setName] = useState('')
     const [surname, setSurName] = useState('')
@@ -210,7 +182,12 @@ const UserPage = () => {
 
                     </div>
                     <Link to='/card'>
-                        <button className={s.btn} type={"submit"} disabled={!isValid} onClick={onSavePostClicked}>Создать</button>
+                        <button className={!isValid? s.btn_disabled :s.btn}
+                                type={"submit"}
+                                disabled={!isValid}
+                                onClick={onSavePostClicked}>
+                            Создать
+                        </button>
                     </Link>
                 </form>
             </section>
