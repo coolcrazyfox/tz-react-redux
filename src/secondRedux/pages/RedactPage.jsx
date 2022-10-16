@@ -40,15 +40,15 @@ const RedactPage = () => {
     const onBirthYearChanged = e => setBirthYear(e.target.value)
     const onPortfolioChanged = e => setPortfolio(e.target.value)
     const onSavePostClicked = () => {
-        if (name && surname && birth_year && portfolio) {
+        if (name || surname || birth_year || portfolio) {
             dispatch( setFirstName(name))
             dispatch( setLastName(surname))
             dispatch( setBirthDay(birth_year))
             dispatch( setResume(portfolio))
-            setName(firstName)
-            setSurName(lastName)
-            setBirthYear(birthday)
-            setPortfolio(resume)
+            setName(name)
+            setSurName(surname)
+            setBirthYear(birth_year)
+            setPortfolio(portfolio)
         }
     }
     const onSubmit = (data)=>{
@@ -117,7 +117,7 @@ const RedactPage = () => {
                 <form className={s.main_container} onSubmit={handleSubmit(onSubmit)}>
                     <h1>Редактировать</h1>
                     <div className={s.input_form}>
-                        <label htmlFor="">Name:
+                        <label htmlFor="">Имя:
                             <input
                                 {...register('name',
                                     {
@@ -129,7 +129,8 @@ const RedactPage = () => {
                                         }
                                     })}
                                 type="text"
-                                placeholder={'Name'}
+                                // placeholder={'Имя'}
+                                value={name}
                                 onChange={onNameChanged}
                             />
                             {errors?.name && <span className={s.span_error}><BiError/></span>}
@@ -145,18 +146,19 @@ const RedactPage = () => {
                         {/*</p>*/}
                     </div>
                     <div className={s.input_form}>
-                        <label htmlFor="">Surname:
+                        <label htmlFor="">Фамилия:
                             <input
                                 {...register('Surname',
                                     {
-                                        required : 'Поле "Surname" обязательно для заполнения',
+                                        required : 'Поле "Фамилия" обязательно для заполнения',
                                         minLength:{
                                             value: 2,
                                             message:'Минимальное количество символов 2'
                                         }
                                     })}
                                 type="text"
-                                placeholder={'Surname'}
+                                // placeholder={'Фамилия'}
+                                value={surname}
                                 onChange={onSurNameChanged}
                             />
                             {errors?.Surname && <span className={s.span_error}><BiError /></span>}
@@ -172,7 +174,7 @@ const RedactPage = () => {
 
                     </div>
                     <div className={s.input_form}>
-                        <label htmlFor="">Birthday:
+                        <label htmlFor="">Год рождения:
                             <input
                                 {...register('Birthday',
                                     {
@@ -187,13 +189,14 @@ const RedactPage = () => {
                                         },
                                         max:{
                                             value:2004,
-                                            message:'Пользователь должен быть совершеннолетним'
+                                            message:'Пользователь должен быть совершеннолетним, но не динозавром ( Пример: 1922)'
                                         },
 
                                     })}
                                 type="number"
-                                placeholder={'Год рождения'}
+                                // placeholder={'Год рождения'}
                                 onChange={onBirthYearChanged}
+                                value={birth_year}
                             />
                             {errors?.Birthday && <span className={s.span_error}><BiError /></span>}
 
@@ -208,20 +211,21 @@ const RedactPage = () => {
 
                     </div>
                     <div className={s.input_form}>
-                        <label htmlFor="">Portfolio:
+                        <label htmlFor="">Портфолио:
                             <input
                                 {...register('Portfolio',
                                     {
-                                        required : 'Поле "Portfolio" обязательно для заполнения',
+                                        required : 'Поле "Портфолио" обязательно для заполнения',
                                         minLength:{
                                             value: 18,
-                                            message:'Поле "Portfolio" должно быть ссылкой на GitHub (https://github.com)'
+                                            message:'Поле "Портфолио" должно быть ссылкой на GitHub (https://github.com)'
                                         },
                                         pattern: /github.com/
 
                                     })}
                                 type="text"
-                                placeholder={'Portfolio'}
+                                // placeholder={'Портфолио'}
+                                value={portfolio}
                                 onChange={onPortfolioChanged}
                             />
                             {errors?.Portfolio && <span className={s.span_error}><BiError/></span>}
@@ -241,7 +245,7 @@ const RedactPage = () => {
                             <Link to='/card'>
                                 <button className={s.btn}
                                         type={'button'}
-                                >Back</button>
+                                >Назад</button>
                             </Link>
                         </div>
                         <div style={{marginLeft:'15px'}}>

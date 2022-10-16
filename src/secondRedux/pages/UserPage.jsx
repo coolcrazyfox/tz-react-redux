@@ -63,7 +63,7 @@ const UserPage = () => {
                 <form className={s.main_container} onSubmit={handleSubmit(onSubmit)}>
                     <h1>Создать</h1>
                     <div className={s.input_form}>
-                        <label htmlFor="">Name:
+                        <label htmlFor="">Имя:
                             <input
                                 {...register('name',
                                     {
@@ -75,7 +75,7 @@ const UserPage = () => {
                                         }
                                     })}
                                 type="text"
-                                placeholder={'Name'}
+                                placeholder={'Имя'}
                                 onChange={onNameChanged}
                             />
                             {errors?.name && <span className={s.span_error}><BiError/></span>}
@@ -91,18 +91,18 @@ const UserPage = () => {
                         {/*</p>*/}
                     </div>
                     <div className={s.input_form}>
-                        <label htmlFor="">Surname:
+                        <label htmlFor="">Фамилия:
                             <input
                                 {...register('Surname',
                                     {
-                                        required : 'Поле "Surname" обязательно для заполнения',
+                                        required : 'Поле "Фамилия" обязательно для заполнения',
                                         minLength:{
                                             value: 2,
                                             message:'Минимальное количество символов 2'
                                         }
                                     })}
                                 type="text"
-                                placeholder={'Surname'}
+                                placeholder={'Фамилия'}
                                 onChange={onSurNameChanged}
                             />
                             {errors?.Surname && <span className={s.span_error}><BiError /></span>}
@@ -118,23 +118,25 @@ const UserPage = () => {
 
                     </div>
                     <div className={s.input_form}>
-                        <label htmlFor="">Birthday:
+                        <label htmlFor="">Год рождения:
                             <input
                                 {...register('Birthday',
                                     {
                                         required : 'Поле "Год рождения" обязательно для заполнения',
-                                        minLength:{
-                                            value: 4,
-                                            message:'Поле "Год рождения" не корректно ( Пример: 1922) '
-                                        },
+
                                         min:{
                                             value:1922,
                                             message:'Дружище да ты прям -- Коннор Маклауд, но поставь годик так: 1922 -- и все будет ОК)))'
                                         },
                                         max:{
                                             value:2004,
-                                            message:'Пользователь должен быть совершеннолетним'
+                                            message:'Пользователь должен быть совершеннолетним, но не динозавром ( Пример: 1922)'
                                         },
+                                        minLength:{
+                                            value: 4,
+                                            message:'Поле "Год рождения" не корректно ( Пример: 1922) '
+                                        },
+
 
                                     })}
                                 type="number"
@@ -154,7 +156,7 @@ const UserPage = () => {
 
                     </div>
                     <div className={s.input_form}>
-                        <label htmlFor="">Portfolio:
+                        <label htmlFor="">Портфолио:
                             <input
                                 {...register('Portfolio',
                                     {
@@ -167,13 +169,13 @@ const UserPage = () => {
 
                                     })}
                                 type="text"
-                                placeholder={'Portfolio'}
+                                placeholder={'Портфолио'}
                                 onChange={onPortfolioChanged}
                             />
                             {errors?.Portfolio && <span className={s.span_error}><BiError/></span>}
                             <div className={s.span_error}>
 
-                                {errors?.Portfolio && <p><MdError style={{marginRight:"5px"}}/>{errors?.Portfolio?.message || 'Поле "Portfolio" должно быть ссылкой на GitHub'}</p>}
+                                {errors?.Portfolio && <p><MdError style={{marginRight:"5px"}}/>{errors?.Portfolio?.message || 'Поле "Портфолио" должно быть ссылкой на GitHub'}</p>}
                             </div>
                         </label>
                         {/*<p>Портфолио*/}

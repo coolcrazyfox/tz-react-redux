@@ -9,7 +9,7 @@ const Birthday = () => {
     return (
         <div style={{display:"flex", flexDirection:"row" , margin:"2px"}}>
             <div>
-                <label htmlFor="">Birth Year:</label>
+                <label htmlFor="">Год рождения:</label>
                 <span style={{marginLeft:'10px'}}>{birth_year}&nbsp;&nbsp;&nbsp;({sum}&nbsp;years)</span>
             </div>
         </div>

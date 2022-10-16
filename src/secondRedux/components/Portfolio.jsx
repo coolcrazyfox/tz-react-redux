@@ -6,7 +6,7 @@ const Portfolio = () => {
     return (
         <div style={{display: "flex", flexDirection: "row", margin:"2px"}}>
             <div>
-                <label htmlFor="">Portfolio:</label>
+                <label htmlFor="">Портфолио:</label>
                 <span style={{marginLeft: '15px'}}>
                     <b>
                         <a style={{color:"rgb(4,61,96)", textDecoration:"none"}} href={portfolio}>{portfolio}</a>

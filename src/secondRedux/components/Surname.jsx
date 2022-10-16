@@ -6,7 +6,7 @@ const Surname = () => {
     return (
         <div style={{display: "flex", flexDirection: "row" , margin:"2px"}}>
             <div>
-                <label htmlFor="">Surname:</label>
+                <label htmlFor="">Фамилия:</label>
                 <span style={{marginLeft: '10px'}}>{lastName}</span>
             </div>
         </div>
