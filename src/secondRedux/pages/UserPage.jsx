@@ -86,9 +86,6 @@ const UserPage = () => {
                                 {errors?.name && <p ><MdError style={{marginRight:"5px"}}/>{errors?.name?.message || 'Error!!!'}</p>}
                             </div>
                         </label>
-                        {/*<p>Имя*/}
-                        {/*    <input type="text" placeholder={"Имя"} value={name} onChange={onNameChanged}/>*/}
-                        {/*</p>*/}
                     </div>
                     <div className={s.input_form}>
                         <label htmlFor="">Фамилия:
@@ -112,9 +109,6 @@ const UserPage = () => {
                                 {errors?.Surname && <p><MdError style={{marginRight:"5px"}}/>{errors?.Surname?.message || 'Error!!!'}</p>}
                             </div>
                         </label>
-                        {/*<p>Фамилия*/}
-                        {/*    <input type="text" placeholder={"Фамилия"} value={surname} onChange={onSurNameChanged}/>*/}
-                        {/*</p>*/}
 
                     </div>
                     <div className={s.input_form}>
@@ -150,9 +144,7 @@ const UserPage = () => {
                                 {errors?.Birthday && <p><MdError style={{marginRight:"5px"}}/>{errors?.Birthday?.message || 'Error!!!'}</p>}
                             </div>
                         </label>
-                        {/*<p>Год рождения*/}
-                        {/*    <input type="number" placeholder={"Год рождения"} value={birth_year} onChange={onBirthYearChanged}/>*/}
-                        {/*</p>*/}
+
 
                     </div>
                     <div className={s.input_form}>
@@ -178,9 +170,6 @@ const UserPage = () => {
                                 {errors?.Portfolio && <p><MdError style={{marginRight:"5px"}}/>{errors?.Portfolio?.message || 'Поле "Портфолио" должно быть ссылкой на GitHub'}</p>}
                             </div>
                         </label>
-                        {/*<p>Портфолио*/}
-                        {/*    <input type="text" placeholder={"Портфолио"} value={portfolio} onChange={onPortfolioChanged}/>*/}
-                        {/*</p>*/}
 
                     </div>
                     <Link to='/card'>
